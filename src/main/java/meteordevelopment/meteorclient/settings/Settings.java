@@ -140,8 +140,7 @@ public class Settings implements ISerializable<Settings>, Iterable<SettingGroup>
             }
         }
 
-        if (invalidate) {
-            if (settings == null) return;
+        if (invalidate && settings != null) {
             settings.clear();
             settings.add(theme.settings(this)).expandX();
             invalidate = false;
